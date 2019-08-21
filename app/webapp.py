@@ -43,6 +43,12 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 
+@server_bp.route('/dashboard')
+@login_required
+def dashboard():
+    return redirect('/dashboard')
+
+
 @server_bp.route('/logout')
 @login_required
 def logout():
